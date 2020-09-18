@@ -102,18 +102,18 @@ public class RegisterActivity extends AppCompatActivity {
                             user.put("Email",email);
                             Object lastName = user.put("LastName", lastname);
                             Object phoneNumber = user.put("phoneNumber", PhoneNumber);
-                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                             documentReference.set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
-                                public void onSuccess(Void aVoid) {
-                                    Log.d(TAG, "onSuccess:Account is Created fot"+userID);
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "onFailure: "+e.toString());
-                                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                public void onComplete(@NonNull Task<Void> task) {
+                                   if (task.isSuccessful()){
+                                       Log.d("Data Saved","Success");
+                                       startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                   }else{
+                                       Log.d("Error",task.getException().getMessage());
+                                   }
                                 }
                             });
+
 
                         }else {
 
