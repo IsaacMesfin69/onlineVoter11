@@ -97,12 +97,13 @@ public class RegisterActivity extends AppCompatActivity {
                             userID = firebaseAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = firestore.collection("Users").document(userID);
                             Map<String,Object> user = new HashMap<>();
-
-                            Object fullName = user.put("fullName", Fullname);
-                            user.put("Email",email);
-                            Object lastName = user.put("LastName", lastname);
-                            Object phoneNumber = user.put("phoneNumber", PhoneNumber);
-                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                             user.put("Email",email);
+                            user.put("FirstName",Fullname);
+                            user.put("LastName",lastname);
+                            user.put("PhoneNumber",PhoneNumber);
+                            
+                            
+                               documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d(TAG, "onSuccess:Account is Created fot"+userID);
