@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Online Election</string>
+    <string name="readme">
+        1.By registering for and/or using the service in any manner, including but not to limited to visiting or browsing
+        the site and using the service to create and run election.
+        --------------------------------------------------------------------------------
+
+        2. Certain of the service may be subject to additional terms and conditions specified by Election runner from time to time.
+        --------------------------------------------------------------------------------
+        3. These Terms of service apply to all users of the service.
+        -------------------------------------------------------------------------------
+        4. Election runner reserves the right, at its sole discretion, to modify or replace any terms od service.
+        --------------------------------------------------------------------------------
+        5. If you are using organization Emails for registeration, you vote will be declined.
+        --------------------------------------------------------------------------------
+        6.You are solely responsible for the activity that occurs on your Account.</string>
+    <string name="term">Read the Following Terms!</string>
+
+</resources>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "257119605232",
+    "firebase_url": "https://online-election-e1126.firebaseio.com",
+    "project_id": "online-election-e1126",
+    "storage_bucket": "online-election-e1126.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257119605232:android:a56e05ef5e286f33740d35",
+        "android_client_info": {
+          "package_name": "com.example.onlineelection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257119605232-tlhueotp9ncvf6h73l43ue34a6oorehl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqe5z3mW7-uMibtTK9EneTosPUF1Wf1DQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257119605232-tlhueotp9ncvf6h73l43ue34a6oorehl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
