@@ -1,6 +1,7 @@
 package com.example.onlineelection;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.text.Layout;
 import android.view.LayoutInflater;
@@ -16,12 +17,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MydataAdapter extends RecyclerView.Adapter<MydataAdapter.TargetViewHolder> {
 
-    ArrayList<Myclass> myclassArrayList;
-    public MydataAdapter(ArrayList<Myclass> mclouddata){
-        myclassArrayList = mclouddata;
+   List<Myclass> myclassList;
+    Context context;
+
+    public MydataAdapter(List<Myclass> myclassList, Context context) {
+        this.myclassList = myclassList;
+        this.context = context;
     }
 
     @NonNull
@@ -34,18 +39,17 @@ public class MydataAdapter extends RecyclerView.Adapter<MydataAdapter.TargetView
 
     @Override
     public void onBindViewHolder(@NonNull TargetViewHolder holder, int position) {
-        final Myclass myclass = myclassArrayList.get(position);
-        holder.name.setText(myclassArrayList.get(position).getName());
-        holder.id.setText(myclassArrayList.get(position).getId());
-
-
+       holder.name.setText(myclassList.get(position).getName());
+       holder.id.setText(myclassList.get(position).getId());
     }
 
     @Override
     public int getItemCount() {
-        if (myclassArrayList==null)
+        if (myclassList!=null){
+            return myclassList.size();
+        }
         return 0;
-        return myclassArrayList.size();
+
     }
 
 
