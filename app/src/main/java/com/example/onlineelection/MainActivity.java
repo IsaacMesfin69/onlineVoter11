@@ -28,7 +28,7 @@ import java.lang.reflect.Type;
 public class MainActivity extends AppCompatActivity {
 
     Button button;
-    ArrayList<Myclass>  mclouddata = new ArrayList<>();
+    List<Myclass> mclouddata=new ArrayList<>();
     private  MydataAdapter mAdapter;
     private RecyclerView recyclerView;
     ArrayAdapter<String> arrayAdapter;
@@ -37,10 +37,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button =  findViewById(R.id.logoutbtn);
+        recyclerView=findViewById(R.id.recycleview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
-        mAdapter= new MydataAdapter(mclouddata);
+        mAdapter= new MydataAdapter(mclouddata,getApplicationContext());
 
 
         recyclerView.setAdapter(mAdapter);
@@ -53,21 +54,24 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void List_Parties (View view){
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = database.getReference("Parties");
-        ValueEventListener dropListner = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mclouddata.clear();
+      databaseReference.addValueEventListener(new ValueEventListener() {
+          @Override
+          public void onDataChange(@NonNull DataSnapshot snapshot) {
+              mclouddata.clear();
+              for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                  Myclass myclass=dataSnapshot.getValue(Myclass.class);
+                  mclouddata.add(myclass);
+              }
+              mAdapter.notifyDataSetChanged();
+          }
 
+          @Override
+          public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        };
+          }
+      });
 
 
 
