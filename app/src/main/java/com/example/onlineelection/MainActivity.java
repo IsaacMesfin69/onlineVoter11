@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     List<Myclass> mclouddata=new ArrayList<>();
     private  MydataAdapter mAdapter;
     private RecyclerView recyclerView;
-    ArrayAdapter<String> arrayAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
         mAdapter= new MydataAdapter(mclouddata,getApplicationContext());
-
-
         recyclerView.setAdapter(mAdapter);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
