@@ -19,9 +19,12 @@ import java.util.ArrayList;
 
 public class MydataAdapter extends RecyclerView.Adapter<MydataAdapter.TargetViewHolder> {
 
-    ArrayList<Myclass> myclassArrayList;
-    public MydataAdapter(ArrayList<Myclass> mclouddata){
-        myclassArrayList = mclouddata;
+   List<Myclass> myclassList=new ArrayList<>();
+  Context context;
+
+    public MydataAdapter(List<Myclass> myclassList, Context context) {
+        this.myclassList = myclassList;
+        this.context = context;
     }
 
     @NonNull
@@ -34,18 +37,19 @@ public class MydataAdapter extends RecyclerView.Adapter<MydataAdapter.TargetView
 
     @Override
     public void onBindViewHolder(@NonNull TargetViewHolder holder, int position) {
-        final Myclass myclass = myclassArrayList.get(position);
-        holder.name.setText(myclassArrayList.get(position).getName());
-        holder.id.setText(myclassArrayList.get(position).getId());
+      holder.name.setText(myclassList.get(position).getName());
+      holder.id.setText(myclassList.get(position).getId());
 
 
     }
 
     @Override
     public int getItemCount() {
-        if (myclassArrayList==null)
+        if (myclassList!=null){
+            return myclassList.size();
+        }
         return 0;
-        return myclassArrayList.size();
+
     }
 
 
