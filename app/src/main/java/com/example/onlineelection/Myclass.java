@@ -2,13 +2,13 @@ package com.example.onlineelection;
 
 public class Myclass {
     private String Name;
-    private int Id;
+    private String ID;
     public Myclass (){
 
     }
-    public Myclass(String Name, int Id){
+    public Myclass(String Name, String Id){
         this.Name = Name;
-        this.Id =Id;
+        this.ID =Id;
 
      }
 
@@ -20,12 +20,12 @@ public class Myclass {
         Name = name;
     }
 
-    public int getId() {
-        return Id;
+    public String getId() {
+        return ID;
     }
 
-    public void setId(int id) {
-        Id = id;
+    public void setId(String id) {
+        ID = id;
     }
 }
 

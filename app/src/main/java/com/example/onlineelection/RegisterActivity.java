@@ -63,7 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
         reigisterbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String memail = email.getText().toString().trim();
+                final String memail = email.getText().toString().trim();
                 String password = mpassword.getText().toString().trim();
                  final String lastname = mlastname.getText().toString().trim();
                  final String Fullname = mfullname.getText().toString().trim();
@@ -97,25 +97,21 @@ public class RegisterActivity extends AppCompatActivity {
                             userID = firebaseAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = firestore.collection("Users").document(userID);
                             Map<String,Object> user = new HashMap<>();
-                             user.put("Email",email);
+                             user.put("Email",memail);
                             user.put("FirstName",Fullname);
                             user.put("LastName",lastname);
                             user.put("PhoneNumber",PhoneNumber);
-                            
-                            
-                               documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Log.d(TAG, "onSuccess:Account is Created fot"+userID);
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "onFailure: "+e.toString());
-                                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                                }
-                            });
-
+                             documentReference.set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                 @Override
+                                 public void onComplete(@NonNull Task<Void> task) {
+                                      if (task.isSuccessful()){
+                                          Log.d("Sucess","Entered Data");
+                                          startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                      }   else{
+                                          Toast.makeText(RegisterActivity.this, "error:"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                      }
+                                 }
+                             });
                         }else {
 
                             Toast.makeText(RegisterActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
