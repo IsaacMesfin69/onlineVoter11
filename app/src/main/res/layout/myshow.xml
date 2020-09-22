@@ -10,10 +10,15 @@
     android:layout_marginHorizontal="10dp"
     android:scrollbars="vertical"
     android:id="@+id/cardview">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imagedis"
+            android:layout_width="62dp"
+            android:layout_height="45dp" />
         <TextView
             android:id="@+id/nameview"
             android:layout_width="wrap_content"
@@ -21,22 +26,26 @@
             android:layout_marginLeft="30dp"
             android:text="NAME"
             android:textStyle="bold" />
+
+
+
         <TextView
-            android:textSize="12sp"
+            android:id="@+id/cousrename"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" name"
             android:layout_marginLeft="50dp"
-            android:id="@+id/cousrename"
-            android:layout_toRightOf="@id/nameview"/>
+            android:layout_toRightOf="@id/nameview"
+            android:text=" name"
+            android:textSize="12sp" />
+
         <TextView
+            android:id="@+id/viewcredit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/nameview"
-            android:id="@+id/viewcredit"
+            android:layout_marginLeft="30dp"
             android:text="ID"
-            android:textStyle="bold"
-            android:layout_marginLeft="30dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/credithour"
@@ -47,7 +56,11 @@
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/viewcredit"
             android:text="id" />
-    </RelativeLayout>
+
+
+
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 
 </androidx.cardview.widget.CardView>

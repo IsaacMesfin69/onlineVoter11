@@ -24,10 +24,12 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
 
             }
-        });login.setOnClickListener(new View.OnClickListener() {
+        });
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                startActivity(new Intent(getApplicationContext(),Mydrawerpage.class));
+                finish();
             }
         });
 
