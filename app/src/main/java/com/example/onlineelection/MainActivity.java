@@ -1,6 +1,7 @@
 package com.example.onlineelection;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -24,24 +25,24 @@ import com.google.firebase.database.DataSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 import android.util.Log;
+import android.widget.Toolbar;
+
 import java.lang.reflect.Type;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Mydrawerpage {
 
     Button button;
     ArrayList<Myclass> mTargetData = new ArrayList<>();
     private RecyclerView mRecyclerView;
     private MyAdapter mAdapter;
     ArrayAdapter<String> arrayAdapter;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        super.addContentView(R.layout.activity_main);
         button =  findViewById(R.id.logoutbtn);
-
-
+        mRecyclerView=findViewById(R.id.recycleview);
+        mAdapter=new MyAdapter(mTargetData);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

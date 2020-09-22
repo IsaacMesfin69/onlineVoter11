@@ -1,31 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="12dp"
-    android:gravity="center_vertical"
-    >
-    <ImageView
-        android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
+
+<com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="ClickMenu"
-        android:src="@drawable/ic_menu"/>
-
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="@font/antic_didone"
-        android:text="Online Election"
-
-        android:textAlignment="center"
-        android:textColor="#636363"
-        android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="22dp"
-        android:textStyle="bold" />
-
+        app:title="@string/app_name"
+        app:titleMarginStart="33dp"
+        android:id="@+id/toolbar"/>
+</com.google.android.material.appbar.AppBarLayout>
 
 
 </LinearLayout>
