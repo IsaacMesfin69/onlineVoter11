@@ -39,7 +39,7 @@ import android.widget.Toolbar;
 import java.lang.reflect.Type;
 import java.util.Map;
 
-public class MainActivity extends Mydrawerpage {
+public class MainActivity extends AppCompatActivity {
 
 
     ArrayList<Myclass> mTargetData = new ArrayList<>();
@@ -54,7 +54,7 @@ public class MainActivity extends Mydrawerpage {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.addContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
         send= findViewById(R.id.send);
         partyid= findViewById(R.id.idvoted);
         partyname = findViewById(R.id.votedname);

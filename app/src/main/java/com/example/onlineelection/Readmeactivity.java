@@ -8,14 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-public class Readmeactivity extends Mydrawerpage {
+public class Readmeactivity extends AppCompatActivity {
     CheckBox checkBox;
     Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.addContentView(R.layout.activity_readmeactivity);
+        setContentView(R.layout.activity_readmeactivity);
         checkBox=findViewById(R.id.checkBox);
         button = findViewById(R.id.nextbtm);
         checkBox.setOnClickListener(new View.OnClickListener() {

@@ -13,7 +13,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-public class Profile extends Mydrawerpage {
+public class Profile extends AppCompatActivity {
 
     TextView yourname, youremail, yourphone,lastname;
     FirebaseAuth firebaseAuth;
@@ -23,7 +23,7 @@ public class Profile extends Mydrawerpage {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.addContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_profile);
         yourname = findViewById(R.id.Yournameprofile);
         yourphone = findViewById(R.id.yourphoneProfile);
         youremail= findViewById(R.id.YourEmail);
