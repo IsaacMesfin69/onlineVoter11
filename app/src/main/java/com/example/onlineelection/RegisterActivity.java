@@ -54,10 +54,6 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-        if(firebaseAuth.getCurrentUser()!= null){
-            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-            finish();
-        }
 
 
         reigisterbtn.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
                             user.put("LastName",lastname);
                             user.put("PhoneNumber",PhoneNumber);
                             startActivity(new Intent(getApplicationContext(),Readmeactivity.class));
-                            finish();
+
                             
                             
                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -135,6 +131,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

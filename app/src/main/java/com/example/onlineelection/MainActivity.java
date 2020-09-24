@@ -33,6 +33,7 @@ import java.util.HashMap;
 import java.util.List;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -50,11 +51,13 @@ public class MainActivity extends AppCompatActivity {
     String userID;
     FirebaseFirestore firestore;
     EditText partyname, partyid;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        progressBar = findViewById(R.id.progressBar3);
         send= findViewById(R.id.send);
         partyid= findViewById(R.id.idvoted);
         partyname = findViewById(R.id.votedname);
@@ -96,14 +99,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                partyid.setVisibility(View.INVISIBLE);
-                partyname.setVisibility(View.INVISIBLE);
+
             }
         });
 
     }
 
         public void List_Parties (View view){
+        progressBar.setVisibility(View.VISIBLE);
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = database.getReference("Parties");
       databaseReference.addValueEventListener(new ValueEventListener() {
@@ -117,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
               }
               mAdapter.notifyDataSetChanged();
               Log.e("Value", "Data received:" + mTargetData.size());
+              progressBar.setVisibility(View.INVISIBLE);
 
 
 

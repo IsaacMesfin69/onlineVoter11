@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Aboutus extends Mydrawerpage {
+public class Aboutus extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.addContentView(R.layout.activity_aboutus);
+        setContentView(R.layout.activity_aboutus);
     }
 }
