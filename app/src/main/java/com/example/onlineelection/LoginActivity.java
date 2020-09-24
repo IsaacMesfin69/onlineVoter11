@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     Button createAccount, login;
@@ -35,6 +36,11 @@ public class LoginActivity extends AppCompatActivity {
         emaill = findViewById(R.id.emailforlogin);
         passswordd = findViewById(R.id.passwordforlogin);
         firebaseAuth =FirebaseAuth.getInstance();
+        FirebaseUser user=firebaseAuth.getCurrentUser();
+        if (user!=null){
+            startActivity(new Intent(getApplicationContext(),Mydrawerpage.class));
+            finish();
+        }
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

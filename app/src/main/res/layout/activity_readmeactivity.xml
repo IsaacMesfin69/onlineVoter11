@@ -16,7 +16,6 @@
         android:background="@android:color/darker_gray"
         android:fontFamily="@font/antic_didone"
         android:text="next"
-        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"

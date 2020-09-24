@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 public class Readmeactivity extends AppCompatActivity {
     CheckBox checkBox;
@@ -18,22 +19,16 @@ public class Readmeactivity extends AppCompatActivity {
         setContentView(R.layout.activity_readmeactivity);
         checkBox=findViewById(R.id.checkBox);
         button = findViewById(R.id.nextbtm);
-        checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkBox.isChecked()){
-                    button.setVisibility(View.VISIBLE);
-
-                }
-                else{
-                    button.setVisibility(View.INVISIBLE);
-                }
-            }
-        });
+      if (checkBox.isChecked()){
+          button.setClickable(true);
+      }else{
+          button.setClickable(false);
+          return;
+      }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),Mydrawerpage.class));
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 finish();
             }
         });
