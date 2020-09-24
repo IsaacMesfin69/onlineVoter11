@@ -27,7 +27,7 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
     public static final String TAG = "TAG";
-    EditText mfullname, email, mpassword,mphone,mlastname;
+    EditText mfullname, email, mpassword,mphone,mlastname,mgender,mcity,msubcity,mkebele,mhousenumber,mworeda;
     Button reigisterbtn, ifregisterbttn;
     ProgressBar progressBar;
     FirebaseAuth firebaseAuth;
@@ -45,26 +45,32 @@ public class RegisterActivity extends AppCompatActivity {
         email = findViewById(R.id.Email);
         mpassword = findViewById(R.id.Password);
         mphone = findViewById(R.id.phoneNumber);
+        mgender=findViewById(R.id.Gender);
+        mcity=findViewById(R.id.City);
+        msubcity=findViewById(R.id.subcity);
+        mworeda=findViewById(R.id.woreda);
+        mhousenumber=findViewById(R.id.houseNo);
+        mkebele=findViewById(R.id.Kebele);
         reigisterbtn = findViewById(R.id.RegisterBtnm);
         ifregisterbttn = findViewById(R.id.ifregibtn);
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
         progressBar = findViewById(R.id.progressBar);
 
-
-
-
-
-
         reigisterbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String memail = email.getText().toString().trim();
+                final String memail = email.getText().toString().trim();
                 String password = mpassword.getText().toString().trim();
                  final String lastname = mlastname.getText().toString().trim();
                  final String Fullname = mfullname.getText().toString().trim();
                  final String PhoneNumber = mphone.getText().toString();
-
+                 final String Gender=mgender.getText().toString();
+                 final String city=mcity.getText().toString();
+                 final String subcity=msubcity.getText().toString();
+                 final String kebele=mkebele.getText().toString();
+                 final String woreda=mworeda.getText().toString();
+                 final String houseno=mhousenumber.getText().toString();
 
 
                 if(TextUtils.isEmpty(memail)){
@@ -93,15 +99,19 @@ public class RegisterActivity extends AppCompatActivity {
                             userID = firebaseAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = firestore.collection("Users").document(userID);
                             Map<String,Object> user = new HashMap<>();
-                            user.put("Email",email);
+                            user.put("Email",memail);// yeha string value new mekebalewu bro
                             user.put("FirstName",Fullname);
                             user.put("LastName",lastname);
                             user.put("PhoneNumber",PhoneNumber);
+                            user.put("Gender",Gender);
+                            user.put("City",city);
+                            user.put("Subcity",subcity);
+                            user.put("kebele",kebele);
+                            user.put("woreda",woreda);
+                            user.put("housenumber",houseno);
                             startActivity(new Intent(getApplicationContext(),Readmeactivity.class));
 
-                            
-                            
-                               documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d(TAG, "onSuccess:Account is Created for"+userID);

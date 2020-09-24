@@ -1,11 +1,14 @@
 package com.example.onlineelection;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -31,15 +34,17 @@ public class Profile extends AppCompatActivity {
         firebaseAuth= FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
         userId = firebaseAuth.getCurrentUser().getUid();
-        final DocumentReference documentReference = firestore.collection("User").document(userId);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+        final DocumentReference documentReference = firestore.collection("Users").document(userId);
+        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-
-                yourphone.setText(value.getString("PhoneNumber"));
-                yourname.setText(value.getString("FirstName"));
-                youremail.setText(value.getString("Email"));
-                lastname.setText(value.getString("LastName"));
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+           DocumentSnapshot documentSnapshot=task.getResult();
+           if (documentSnapshot.exists()){
+               yourname.setText(documentSnapshot.get("FirstName").toString());
+               lastname.setText(documentSnapshot.get("LastName").toString());
+               youremail.setText(documentSnapshot.get("Email").toString());
+               yourphone.setText(documentSnapshot.get("PhoneNumber").toString());
+           }
             }
         });
     }
