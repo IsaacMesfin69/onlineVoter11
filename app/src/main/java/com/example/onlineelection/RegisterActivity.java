@@ -19,7 +19,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -28,7 +27,7 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
     public static final String TAG = "TAG";
-    EditText mfullname, email, mpassword,mphone,mlastname,mkebele,mwereda,msubsity,mcity,mhousenumber;
+    EditText mfullname, email, mpassword,mphone,mlastname;
     Button reigisterbtn, ifregisterbttn;
     ProgressBar progressBar;
     FirebaseAuth firebaseAuth;
@@ -46,29 +45,30 @@ public class RegisterActivity extends AppCompatActivity {
         email = findViewById(R.id.Email);
         mpassword = findViewById(R.id.Password);
         mphone = findViewById(R.id.phoneNumber);
-        mkebele=findViewById(R.id.Kebele);
-        msubsity=findViewById(R.id.subcity);
-        mhousenumber=findViewById(R.id.houseNo);
-        mwereda=findViewById(R.id.woreda);
-        mcity=findViewById(R.id.City);
         reigisterbtn = findViewById(R.id.RegisterBtnm);
         ifregisterbttn = findViewById(R.id.ifregibtn);
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
         progressBar = findViewById(R.id.progressBar);
+
+
+
+
+        if(firebaseAuth.getCurrentUser()!= null){
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+            finish();
+        }
+
+
         reigisterbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String memail = email.getText().toString().trim();
+                String memail = email.getText().toString().trim();
                 String password = mpassword.getText().toString().trim();
                  final String lastname = mlastname.getText().toString().trim();
                  final String Fullname = mfullname.getText().toString().trim();
                  final String PhoneNumber = mphone.getText().toString();
-                 final String city=mcity.getText().toString();
-                final String subcity=msubsity.getText().toString();
-                final String kebele=mkebele.getText().toString();
-                final String woreda=mwereda.getText().toString();
-                final String houseno=mhousenumber.getText().toString();
+
 
 
                 if(TextUtils.isEmpty(memail)){
@@ -78,10 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Insert Your LastName", Toast.LENGTH_SHORT).show();
 
                 }
-                if (TextUtils.isEmpty(city)&&TextUtils.isEmpty(kebele)&&TextUtils.isEmpty(woreda)&&TextUtils.isEmpty(subcity)&&TextUtils.isEmpty(houseno)){
-                    Toast.makeText(RegisterActivity.this, "Please Fill in the Forms", Toast.LENGTH_SHORT).show();
-                    //add set error to them all
-                }
+
 
                 if(TextUtils.isEmpty(password)){
 
@@ -100,25 +97,24 @@ public class RegisterActivity extends AppCompatActivity {
                             userID = firebaseAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = firestore.collection("Users").document(userID);
                             Map<String,Object> user = new HashMap<>();
-                             user.put("Email",memail);
+                            user.put("Email",email);
                             user.put("FirstName",Fullname);
                             user.put("LastName",lastname);
                             user.put("PhoneNumber",PhoneNumber);
-                            user.put("Kebele",kebele);
-                            user.put("Woreda",woreda);
-                            user.put("City",city);
-                            user.put("SubCity",subcity);
-                            user.put("HouseNumber",houseno);
-                            documentReference.set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            startActivity(new Intent(getApplicationContext(),Readmeactivity.class));
+                            finish();
+                            
+                            
+                               documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                   if (task.isSuccessful()){
-                                       Toast.makeText(RegisterActivity.this, "Created Account", Toast.LENGTH_SHORT).show();
-                                       startActivity(new Intent(getApplicationContext(),Mydrawerpage.class));
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(TAG, "onSuccess:Account is Created for"+userID);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d(TAG, "onFailure: "+e.toString());
 
-                                   }else{
-                                       Toast.makeText(RegisterActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                   }
                                 }
                             });
 
@@ -128,8 +124,17 @@ public class RegisterActivity extends AppCompatActivity {
                             progressBar.setVisibility(View.GONE);
                         }
 
+
                     }
                 });
+            }
+        });
+
+        ifregisterbttn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                startActivity(intent);
             }
         });
 

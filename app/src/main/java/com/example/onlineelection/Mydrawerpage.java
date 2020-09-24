@@ -40,8 +40,9 @@ public class Mydrawerpage extends AppCompatActivity {
 
 
     public void ClickHome(View view){
-        recreate();
-        closeDrawer();
+        redirectActivity(this,Home.class);
+        finish();
+
     }
     public void Profile (View view){
        redirectActivity(this,Profile.class);

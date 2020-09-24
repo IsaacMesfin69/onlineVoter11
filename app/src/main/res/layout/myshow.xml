@@ -11,31 +11,25 @@
     android:scrollbars="vertical"
     android:id="@+id/cardview">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imagedis"
-            android:layout_width="62dp"
-            android:layout_height="45dp" />
         <TextView
             android:id="@+id/nameview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:text="NAME"
+            android:text="PARTY NAME"
             android:textStyle="bold" />
 
-
-
         <TextView
-            android:id="@+id/cousrename"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_toRightOf="@id/nameview"
-            android:text=" name"
+            android:text="Course name"
             android:textSize="12sp" />
 
         <TextView
@@ -48,19 +42,17 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/credithour"
+            android:id="@+id/id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/cousrename"
-            android:layout_marginLeft="94dp"
-            android:layout_marginTop="5dp"
+            android:layout_below="@id/name"
+            android:layout_marginLeft="124dp"
+            android:layout_marginTop="0dp"
             android:layout_toRightOf="@id/viewcredit"
-            android:text="id" />
+            android:text="Credit Hour" />/>
+        "
 
-
-
-
-    </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
 
 
 </androidx.cardview.widget.CardView>

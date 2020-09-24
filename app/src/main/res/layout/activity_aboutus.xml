@@ -6,4 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".Aboutus">
 
+    <ScrollView
+        android:layout_width="363dp"
+        android:layout_height="468dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="210dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/aboutustext"
+            android:textSize="22sp"
+            android:text="@string/abotus"/>
+
+
+
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

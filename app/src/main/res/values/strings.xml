@@ -1,19 +1,26 @@
 <resources>
     <string name="app_name">Online Election</string>
     <string name="readme">
-        1.By registering for and/or using the service in any manner, including but not to limited to visiting or browsing
-        the site and using the service to create and run election.
-        --------------------------------------------------------------------------------
+        Please read these Terms of Service carefully before accessing or using the service.
+        By registering for or using the service in any manner, your are expected to run the on-line election
+        service by voting the parties you like to vote.
+        Certain of the service may be subject to additional terms and conditions specified by Election runner from time to time.
+        Election runner reserves the right, at its sole discretion, to modify or replace any terms od service.
+        If you are using organization Emails for registrations, your vote will be declined.
+        You are solely responsible for the activity that occurs on your Account.
+        We shall not be liable to you or to any third-party for any modification, suspension or discontinuance of the Service.
+        By accessing or using any part of the app, you agree to be bound by these Terms of Service.
+        If you do not agree to all the terms and conditions of this agreement, then you may not access the app or use any services.
+        If these Terms of Service are considered an offer, acceptance is expressly limited to these Terms of service.
+        These Terms of service apply to all users of the service.
+    </string>
+    <string name="abotus"> This app is developed to make a platform for online election.
+                          In this project included Firebase, Firebasedata, and Firestore.
+        Developed By: Yeshak Mesfin.
+        Email: Isaacmesfin@gmail.com
+        Github: IsaacMesfin69
 
-        2. Certain of the service may be subject to additional terms and conditions specified by Election runner from time to time.
-        --------------------------------------------------------------------------------
-        3. These Terms of service apply to all users of the service.
-        -------------------------------------------------------------------------------
-        4. Election runner reserves the right, at its sole discretion, to modify or replace any terms od service.
-        --------------------------------------------------------------------------------
-        5. If you are using organization Emails for registeration, you vote will be declined.
-        --------------------------------------------------------------------------------
-        6.You are solely responsible for the activity that occurs on your Account.</string>
+    </string>
     <string name="term">Read the Following Terms!</string>
     <string name="title_activity_home">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

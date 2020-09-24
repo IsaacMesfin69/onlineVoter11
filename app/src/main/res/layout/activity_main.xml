@@ -9,91 +9,111 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="174dp"
-        android:layout_height="145dp"
+        android:layout_width="262dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="534dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ballot" />
+        app:srcCompat="@drawable/voteiamges2" />
 
     <TextView
         android:id="@+id/votinistv"
         android:layout_width="286dp"
         android:layout_height="39dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="197dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="495dp"
         android:fontFamily="@font/antic_didone"
         android:paddingHorizontal="70dp"
         android:paddingVertical="8dp"
         android:text="Voting Is Right!"
+        android:inputType="text"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/listdownbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="251dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="443dp"
         android:background="@drawable/edit_text_background"
         android:onClick="List_Parties"
         android:text="List Parties!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
-
-    <Button
-        android:id="@+id/logoutbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleview"
-        android:layout_width="406dp"
-        android:layout_height="286dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="402dp"
+        android:layout_height="260dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="288dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="183dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listdownbtn"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/votedname"
         android:layout_width="171dp"
         android:layout_height="39dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="577dp"
+        android:layout_marginEnd="212dp"
+        android:layout_marginBottom="115dp"
         android:ems="10"
         android:hint="Name of the Party"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recycleview" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/idvoted"
-        android:layout_width="165dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="44dp"
-        android:ems="10"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="577dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="115dp"
+
         android:hint="Id of the Party!"
-        android:inputType="textPersonName"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recycleview" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="106dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/edit_text_background"
+        android:text="SEND"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

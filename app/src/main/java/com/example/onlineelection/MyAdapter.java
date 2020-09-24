@@ -33,9 +33,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter. MyownViewHolder>{
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull final MyownViewHolder viewHolder, final int i) {
-        final Myclass myclass = targetsArrayList.get(i);
+
         viewHolder.name.setText(targetsArrayList.get(i).getName());
-        viewHolder.id.setText(Integer.toString(targetsArrayList.get(i).getID()));
+        viewHolder.id.setText(Integer.toString(targetsArrayList.get(i).getId()));
 
         }
 
@@ -50,14 +50,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter. MyownViewHolder>{
     public static class MyownViewHolder extends RecyclerView.ViewHolder{
         protected TextView name;
         protected TextView id;
-        protected ImageView imageView;
+
         CardView cardView;
         public MyownViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.cousrename);
-            id = itemView.findViewById(R.id.viewcredit);
+            name = itemView.findViewById(R.id.name);
+            id = itemView.findViewById(R.id.id);
 
-            imageView= itemView.findViewById(R.id.imagedis);
+
 
 
             cardView=itemView.findViewById(R.id.cardview);
