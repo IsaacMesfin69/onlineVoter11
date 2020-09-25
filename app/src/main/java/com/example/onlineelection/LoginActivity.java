@@ -55,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
                 String email = emaill.getText().toString();
                 String password =  passswordd.getText().toString();
 
@@ -72,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Logged In", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(),Mydrawerpage.class));
                                 finish();
-                                progressBar.setVisibility(View.VISIBLE);
+
 
                             }
                             else{

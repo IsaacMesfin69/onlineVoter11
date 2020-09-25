@@ -2,25 +2,30 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blackk"
+
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="385dp"
-        android:layout_height="102dp"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
         android:layout_margin="16dp"
         android:onClick="Clicklog"
-        android:src="@drawable/ballot" />
+       android:background="@drawable/blacktored"
+        android:src="@drawable/voteballot" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Voter APP"
+        android:background="@color/common_google_signin_btn_text_dark_default"
         android:fontFamily="@font/antic_didone"
-        android:textSize="29sp"
-        android:textStyle="bold"
+        android:text="Voter APP"
         android:textAlignment="center"
+        android:textColor="#636363"
+        android:textSize="29sp"
 
-        android:textColor="#636363"/>
+        android:textStyle="bold" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -37,6 +42,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:text="Home"
             android:fontFamily="@font/antic_didone"
             android:padding="12dp"
@@ -44,6 +50,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/common_google_signin_btn_text_dark_default"
             android:layout_marginEnd="48dp"
             android:src="@drawable/ic_bhome"/>
 
@@ -59,6 +66,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:text="Voting"
             android:fontFamily="@font/antic_didone"
             android:padding="12dp"
@@ -67,6 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
+            android:background="@color/common_google_signin_btn_text_dark_default"
             android:src="@drawable/ic_vote"/>
 
     </LinearLayout>
@@ -87,7 +96,7 @@
         android:onClick="Profile">
         <TextView
             android:layout_width="0dp"
-
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Profile"
@@ -98,6 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
+            android:background="@color/common_google_signin_btn_text_dark_default"
             android:src="@drawable/ic_account"/>
     </LinearLayout>
 
@@ -112,6 +122,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="About?"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:fontFamily="@font/antic_didone"
             android:padding="12dp"
             android:layout_marginStart="16dp"/>
@@ -119,6 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
+            android:background="@color/common_google_signin_btn_text_dark_default"
             android:src="@drawable/ic_info"/>
     </LinearLayout>
     <LinearLayout
@@ -134,12 +146,14 @@
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:text="Log-out"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:fontFamily="@font/antic_didone"
             android:padding="12dp"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
+            android:background="@color/common_google_signin_btn_text_dark_default"
             android:src="@drawable/ic_exit"/>
 
     </LinearLayout>
@@ -159,11 +173,13 @@
             android:layout_weight="1"
             android:padding="12dp"
             android:fontFamily="@font/antic_didone"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:text="Exit" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
+            android:background="@color/common_google_signin_btn_text_dark_default"
             android:src="@drawable/ic_close"
 
             />
