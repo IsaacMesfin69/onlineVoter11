@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/darkgreen"
     tools:context=".Profile">
 
 
@@ -15,7 +16,7 @@
         android:layout_marginTop="190dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="501dp"
-        android:background="@drawable/edit_text_background"
+        android:background="@color/common_google_signin_btn_text_dark_default"
         android:fontFamily="@font/antic_didone"
         android:hint="Your F_ Name"
         android:padding="8dp"
@@ -34,7 +35,7 @@
         android:layout_marginTop="397dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="294dp"
-        android:background="@drawable/edit_text_background"
+        android:background="@color/common_google_signin_btn_text_dark_default"
         android:fontFamily="@font/antic_didone"
         android:hint="Your Email "
         android:padding="8dp"
@@ -53,7 +54,7 @@
         android:layout_marginTop="332dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="359dp"
-        android:background="@drawable/edit_text_background"
+        android:background="@color/common_google_signin_btn_text_dark_default"
         android:fontFamily="@font/antic_didone"
         android:hint="Your Phone.No"
         android:padding="8dp"
@@ -86,7 +87,8 @@
         android:layout_marginTop="260dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="431dp"
-        android:background="@drawable/edit_text_background"
+
+        android:background="@color/common_google_signin_btn_text_dark_default"
         android:fontFamily="@font/antic_didone"
         android:hint="Your Last Name"
         android:padding="8dp"
@@ -100,14 +102,14 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="308dp"
-        android:layout_height="65dp"
+        android:layout_height="54dp"
         android:layout_marginTop="66dp"
-        android:background="@drawable/edit_text_background"
+        android:background="@color/common_google_signin_btn_text_dark_default"
         android:fontFamily="@font/antic_didone"
         android:text="Your Profile"
 
-        android:paddingVertical="11dp"
-        android:paddingHorizontal="36dp"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="40dp"
         android:textSize="42sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

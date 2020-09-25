@@ -13,6 +13,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -51,44 +52,31 @@ public class Mydrawerpage extends AppCompatActivity {
     }
     public void Logout(View view){
         redirectActivity(this,LoginActivity.class);
-        finish();
         closeDrawer();
+        finish();
     }
     public void ClickAboutus (View view){
         redirectActivity(this,Aboutus.class);
         closeDrawer();
     }
-    public  void Exit (View view){
-        Exit(this);
-        closeDrawer();
-    }
-
-    public static void Exit (final Activity activity) {
-        //initail alert message
-        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        // set title
-        builder.setTitle("Exit");
-        // set message
-        builder.setMessage("Are Your sure to Exit?");
-        //postive yes button
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+    public void Exit (View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(Mydrawerpage.this);
+        builder.setMessage("Do You Want To Exit?");
+        builder.setCancelable(true);
+        builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                activity.finishAffinity();
-                //exit app
-                System.exit(0);
-
+                finish();
             }
-        });
-        //set negative to no
-        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+        });builder.setPositiveButton("NO", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
+                dialogInterface.cancel();
             }
         });
-        //show dialog
-        builder.show();
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+        return;
     }
 
 
